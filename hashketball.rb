@@ -115,6 +115,18 @@ def game_hash
 end
 
 
+def player_by_num(num)
+  game_hash.each do |loc, team_data|
+    team_data[:players].each do |name, stat|
+      if stat[:number] == num 
+        puts name
+    end
+  end
+  end
+end
+
+player_by_num(33)
+
 
 def num_points_scored(name)
   game_hash.each do |location, team_data|
