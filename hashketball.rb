@@ -1,4 +1,3 @@
-require 'pry'
 
 def game_hash
   game_hash = {
@@ -25,7 +24,7 @@ def game_hash
             :steals => 12,
             :blocks => 12,
             :slam_dunks => 7
-          
+
           },
           "Brook Lopez" => {
             :number => 11,
@@ -36,7 +35,7 @@ def game_hash
             :steals => 3,
             :blocks => 1,
             :slam_dunks => 15
-            
+
           },
           "Mason Plumlee" => {
             :number => 1,
@@ -172,14 +171,14 @@ def player_stats(name)
         return player_stats
       end
     end
-  end 
+  end
 end
 
 
 
 def big_shoe_rebounds()
   player_with_largest_shoe = find_player_with_longest_shoe()
-  
+
   game_hash().each do |location, team_data|
     team_data[:players].each do |player_name, player_stats|
       if player_name == player_with_largest_shoe
@@ -192,7 +191,7 @@ end
 def find_player_with_longest_shoe()
   largest_shoe_size = nil
   player_with_largest_shoe = nil
-  
+
   game_hash().each do |location, team_data|
     team_data[:players].each do |player_name, player_stats|
       if largest_shoe_size == nil || player_stats[:shoe] > largest_shoe_size
@@ -201,10 +200,6 @@ def find_player_with_longest_shoe()
      end
     end
   end
-  
+
   player_with_largest_shoe
 end
-
-
-
-
